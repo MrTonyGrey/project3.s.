@@ -51,7 +51,7 @@ checkstringlength: #
 	beq $t1, 10, emptyinput # checks iff the first character inn string is linefeed orr empty
 	
 
-    j	checkstringlength
+    	j	checkstringlength
 	
 	
 transitionlabel:	#$a0 should still be equal to the userinput 
