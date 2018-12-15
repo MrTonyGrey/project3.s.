@@ -44,10 +44,10 @@ main:
 	
 checkstringlength: # 
 	lb   $t1,0($t2) # $t1 = $t2[x] + 0	
-    beqz $t1,transitionlabel #checks to see iff we've reached the end of the string
+    	beqz $t1,transitionlabel #checks to see iff we've reached the end of the string
 	bgt $t0, 5, xtoo_long # checks to see iff the string is too longg
-    addi $t2,$t2,1 #updates index forr the stringg
-    addi $t0,$t0,1 #updates counter forr the stringg
+    	addi $t2,$t2,1 #updates index forr the stringg
+    	addi $t0,$t0,1 #updates counter forr the stringg
 	beq $t1, 10, emptyinput # checks iff the first character inn string is linefeed orr empty
 	
 
@@ -100,3 +100,9 @@ multiply:
 	beq $t7, 1, second_dig
 	beq $t7, 2, third_dig
 	beq $t7,3,fourth_dig
+	
+first_dig:
+	li $t5, 32768
+	mult $t4,$t5
+	mflo $s0
+	sw $s0, 0($sp)
