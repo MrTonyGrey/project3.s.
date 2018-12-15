@@ -109,3 +109,9 @@ first_dig:
 	addi $a0, $a0, 1 # Moves to the next value inn the string
 	addi $t7, $t7, 1 # increments calculations
 	j	calculate_char
+	
+second_dig:
+	li $t6, 1024
+	mult $t4, $t6
+	mflo $s1
+	sw $s1, 4($sp)
