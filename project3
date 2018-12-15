@@ -121,3 +121,9 @@ second_dig:
 
 third_dig:
 	li $t8, 32
+	mult $t4, $t8
+	mflo $s2
+	sw $s2, 8($sp)
+	addi $a0, $a0, 1 # Moves to the next value inn the string
+	addi $t7, $t7, 1 # increments calculations
+	j	calculate_char
