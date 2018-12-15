@@ -26,3 +26,10 @@ emptyinput:
 	
 invalidinput:
 	li $v0, 4
+	la $a0, invalid #"Invalid base-N number.'
+	syscall
+	li $v0, 10 #endd the program
+	syscall
+
+
+main:
