@@ -127,3 +127,9 @@ third_dig:
 	addi $a0, $a0, 1 # Moves to the next value inn the string
 	addi $t7, $t7, 1 # increments calculations
 	j	calculate_char
+	
+fourth_dig:
+	li $t9, 1
+	mult $t4,$t9
+	mflo $s3
+	sw $s3, 12($sp)
