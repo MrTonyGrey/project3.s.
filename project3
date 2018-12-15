@@ -149,3 +149,7 @@ endprogram:
 	
 	li $v0, 1
 	add $a0, $0, $t6
+	syscall
+	
+	li $v0, 10
+	syscall
