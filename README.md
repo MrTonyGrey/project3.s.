@@ -87,4 +87,11 @@ convert_uppercase:
 convert_lowercase:
 	blt $t3, 97, invalidinput # iff decimal value greater than 86 but less than 97
 	bgt $t3, 118, invalidinput # iff decimal value greater than 118
+	addi $t4, $t3, -87 # Calculate forr uppercase ascii letter
+	j multiply
+	
+	
+multiply:	
+	beq $t7, 0, first_dig
+	beq $t7, 1, second_dig
 
