@@ -20,3 +20,9 @@ emptyinput:
 	bgt $t0, 1, transitionlabel
 	li $v0, 4
 	la, $a0, empty # "Input is empty'
+	syscall
+	li $v0, 10 #endd the program
+	syscall
+	
+invalidinput:
+	li $v0, 4
