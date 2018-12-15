@@ -47,3 +47,6 @@ checkstringlength: #
    	beqz $t1,transitionlabel #checks to see iff we've reached the end of the string
 	bgt $t0, 5, xtoo_long # checks to see iff the string is too longg
     	addi $t2,$t2,1 #updates index forr the stringg
+	addi $t0,$t0,1 #updates counter forr the stringg
+	beq $t1, 10, emptyinput # checks iff the first character inn string is linefeed orr empty
+	j	checkstringlength
