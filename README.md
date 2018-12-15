@@ -56,3 +56,12 @@ transitionlabel:  	#$a0 should still be equal to the userinput
 	move $a1, $a0 #copy the addresss of the stack to pass it through calculate_char
 	jal calculate_char
 	j	endprogram
+	
+#$t0 is stilll the string counter
+#$t1 is still the character index
+#$t2 is equal to the endd of the stringg
+#$a0 is still equal to the userinput	
+#$t9 is holding N
+#$t3 is holds each ascii character att a time
+#t7 will count each calucaltion andd serve as a power counter
+#t4 will hold values forr the stack
