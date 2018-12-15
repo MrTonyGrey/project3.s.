@@ -136,3 +136,10 @@ fourth_dig:
 	addi $a0, $a0, 1 # Moves to the next value inn the string
 	addi $t7, $t7, 1 # increments calculations
 	jr $ra
+	
+endprogram:
+
+	lw $t0, 0($sp)
+	lw $t1, 4($sp)
+	lw $t2, 8($sp)
+	lw $t3, 12($sp)
