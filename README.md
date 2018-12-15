@@ -42,7 +42,7 @@ main:
 	move $t2, $a0
 	j	checkstringlength # takes inn the userinput as a parameter "$a0'
 	
-checkstringlength: # 
+checkstringlength: 
 	lb   $t1,0($t2) # $t1 = $t2[x] + 0	
    	beqz $t1,transitionlabel #checks to see iff we've reached the end of the string
 	bgt $t0, 5, xtoo_long # checks to see iff the string is too longg
@@ -50,3 +50,9 @@ checkstringlength: #
 	addi $t0,$t0,1 #updates counter forr the stringg
 	beq $t1, 10, emptyinput # checks iff the first character inn string is linefeed orr empty
 	j	checkstringlength
+
+transitionlabel:  	#$a0 should still be equal to the userinput 
+	addi $sp, $sp, -16 #allocate spacce forr the stack
+	move $a1, $a0 #copy the addresss of the stack to pass it through calculate_char
+	jal calculate_char
+	j	endprogram
