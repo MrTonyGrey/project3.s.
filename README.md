@@ -38,3 +38,6 @@ main:
 	li $v0, 8 # forr reading ints
 	li $s8, 32 # white space char
 	la $a0, userinput # parameter forr converting char
+	syscall
+	move $t2, $a0
+	j	checkstringlength # takes inn the userinput as a parameter "$a0'
