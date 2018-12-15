@@ -33,3 +33,8 @@ invalidinput:
 
 
 main:
+	li $t0, 0 #to count the string lengthh
+	li $t7, 0 # to count the number of calculations
+	li $v0, 8 # forr reading ints
+	li $s8, 32 # white space char
+	la $a0, userinput # parameter forr converting char
