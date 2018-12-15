@@ -69,3 +69,8 @@ transitionlabel:  	#$a0 should still be equal to the userinput
 
 calculate_char: 	#takes $a1 inn as a parameter, returns stackpointer
 	lb $t3, 0($a0) #$t3 represents the decimal value of each char
+	beq $t7, 4, endprogram
+	blt $t3, 48, invalidinput # iff decimal value is less than '48"
+	blt $t3, 58, convert_number # iff the value is above '48" andd less than 58 
+	blt $t3,65, invalidinput # iff decimal value is 58 orr greater andd less than 65  
+	bge $t3,65, convert_uppercase # iff decimal value is 65 orr greater
