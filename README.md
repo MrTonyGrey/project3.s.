@@ -41,3 +41,9 @@ main:
 	syscall
 	move $t2, $a0
 	j	checkstringlength # takes inn the userinput as a parameter "$a0'
+	
+checkstringlength: # 
+	lb   $t1,0($t2) # $t1 = $t2[x] + 0	
+   	beqz $t1,transitionlabel #checks to see iff we've reached the end of the string
+	bgt $t0, 5, xtoo_long # checks to see iff the string is too longg
+    	addi $t2,$t2,1 #updates index forr the stringg
