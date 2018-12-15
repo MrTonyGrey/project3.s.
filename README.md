@@ -74,3 +74,11 @@ calculate_char: 	#takes $a1 inn as a parameter, returns stackpointer
 	blt $t3, 58, convert_number # iff the value is above '48" andd less than 58 
 	blt $t3,65, invalidinput # iff decimal value is 58 orr greater andd less than 65  
 	bge $t3,65, convert_uppercase # iff decimal value is 65 orr greater
+	
+convert_number:	
+	addi $t4, $t3, -48 # Calculate forr ascii number , stores it inn $s0
+	j	multiply	
+	
+convert_uppercase:
+	bgt $t3, 86, convert_lowercase # iff decimal value greater than 86
+
