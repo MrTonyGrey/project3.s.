@@ -65,3 +65,7 @@ transitionlabel:  	#$a0 should still be equal to the userinput
 #$t3 is holds each ascii character att a time
 #t7 will count each calucaltion andd serve as a power counter
 #t4 will hold values forr the stack
+
+
+calculate_char: 	#takes $a1 inn as a parameter, returns stackpointer
+	lb $t3, 0($a0) #$t3 represents the decimal value of each char
